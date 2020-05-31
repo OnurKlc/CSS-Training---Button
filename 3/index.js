@@ -1,14 +1,11 @@
 const testArray = ["AAA", "BBBBBB", "ABABABAB", "BABABA", "AAAABBBB"];
 
-for (let i = 0; i < testArray.length; i++) {
-  main(testArray[i].length, testArray[i]);
-}
+function main(q, s) {
+  let result = [];
 
-function main(length, arg) {
-  let result = 0;
+  for (let i = 0; i < q; i++) {
 
-  if (length >= 1 && length <= 100000) {
-    let arr = arg.split('');
+    let arr = s[i].split('');
     let past = arr[0];
 
     arr = arr.filter((value, inx) => {
@@ -17,8 +14,11 @@ function main(length, arg) {
         return value;
       }
     });
-    result = length - [arg.charAt(0), ...arr].length;
+    result.push(s[i].length - [s[i].charAt(0), ...arr].length);
   }
-  console.log(result)
+  console.log(result);
+
   return result;
 }
+
+main(testArray.length, testArray);
