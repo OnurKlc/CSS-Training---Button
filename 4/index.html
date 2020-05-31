@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="main">
-    <h3>Pure CSS without functionality</h3>
+    <h3>Pure CSS</h3>
     <div class="wrapping-circle-cutter">
         <div class="wrapping-circle">
         </div>
@@ -19,11 +19,11 @@
     </div>
     <div class="button-container">
         <div class="sub-buttons">
-            <span class="icon-cog"></span>
-            <span class="icon-volume-up"></span>
-            <span class="icon-backward"></span>
-            <span class="icon-fast_forward"></span>
-            <div class="play-button">
+            <span class="icon-cog" onClick="action('Open Settings')" onMouseOver="mouseOver(event)" onMouseOut="mouseOut(event)"></span>
+            <span class="icon-volume-up" onClick="action('Volume')" onMouseOver="mouseOver(event)" onMouseOut="mouseOut(event)"></span>
+            <span class="icon-backward" onClick="action('Backward')" onMouseOver="mouseOver(event)" onMouseOut="mouseOut(event)"></span>
+            <span class="icon-fast_forward" onClick="action('Fast Forward')" onMouseOver="mouseOver(event)" onMouseOut="mouseOut(event)"></span>
+            <div class="play-button" onClick="action('Playing')">
                 <div class="divider-1"></div>
                 <div class="divider-2"></div>
                 <div class="divider-3"></div>
@@ -46,8 +46,56 @@
     </div>
 </div>
 <div class="img-container">
-    <h3>IMG with functionality</h3>
+    <h3>IMG without functionality</h3>
     <img src="button.png" alt="music player" class="button">
 </div>
 </body>
+<script>
+    function action(arg) {
+      console.log(arg);
+    }
+
+    function mouseOver(e) {
+      console.log(e.target.className);
+      switch (e.target.className) {
+        case 'icon-fast_forward':
+          document.getElementById('b1').style.borderWidth = '55px';
+          document.getElementById('b').style.cssText = 'height: 132px; width: 132px; right: -12px';
+          break;
+        case 'icon-cog':
+          document.getElementById('c1').style.borderWidth = '55px';
+          document.getElementById('c').style.cssText = 'height: 132px; width: 132px; bottom: -12px';
+          break;
+        case 'icon-backward':
+          document.getElementById('d1').style.borderWidth = '55px';
+          document.getElementById('d').style.cssText = 'height: 132px; width: 132px; left: -12px';
+          break;
+        case 'icon-volume-up':
+          document.getElementById('a1').style.borderWidth = '55px';
+          document.getElementById('a').style.cssText = 'height: 132px; width: 132px; top: -12px';
+          break;
+      }
+    }
+
+    function mouseOut(e) {
+      switch (e.target.className) {
+        case 'icon-fast_forward':
+          document.getElementById('b1').style.borderWidth = '52px';
+          document.getElementById('b').style.cssText = 'height: 130px; width: 130px; right: -10px';
+          break;
+        case 'icon-cog':
+          document.getElementById('c1').style.borderWidth = '52px';
+          document.getElementById('c').style.cssText = 'height: 130px; width: 130px; bottom: -10px';
+          break;
+        case 'icon-backward':
+          document.getElementById('d1').style.borderWidth = '52px';
+          document.getElementById('d').style.cssText = 'height: 130px; width: 130px; left: -10px';
+          break;
+        case 'icon-volume-up':
+          document.getElementById('a1').style.borderWidth = '52px';
+          document.getElementById('a').style.cssText = 'height: 130px; width: 130px; top: -10px';
+          break;
+      }
+    }
+</script>
 </html>

@@ -77,22 +77,34 @@ body {
     color: #9E9DA3;
     font-size: 24px;
     z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
   }
 
   .icon-cog {
-    bottom: -38px;
+    bottom: -48px;
+    width: 165px;
+    height: 42px;
   }
 
   .icon-volume-up {
-    top: -35px;
+    top: -47px;
+    width: 165px;
+    height: 42px;
   }
 
   .icon-backward {
-    left: -36px;
+    left: -48px;
+    height: 165px;
+    width: 42px;
   }
 
   .icon-fast_forward {
-    right: -36px;
+    right: -48px;
+    height: 165px;
+    width: 42px;
   }
 }
 
@@ -155,6 +167,13 @@ body {
   justify-content: center;
   align-items: center;
   box-shadow: 0 14px 9px -4px rgba(41,35,41,0.38), inset 0px -4px 4px 0px rgba(0,0,0,0.75);
+  position: relative;
+  z-index: 100;
+  &:hover {
+    width: 152px;
+    height: 152px;
+    cursor: pointer;
+  }
 }
 .play-icon {
   width: 0;
