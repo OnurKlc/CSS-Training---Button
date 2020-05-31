@@ -16,7 +16,7 @@ const main = function (l, arr) {
       }
     }
     const occurences = Object.values(counts);
-    let newocc = occurences.map((val) => Math.floor(val / 2))
+    const newocc = occurences.map((val) => Math.floor(val / 2))
     result = newocc.reduce((a, b) => a +b, 0)
     console.log(result);
     return result;
