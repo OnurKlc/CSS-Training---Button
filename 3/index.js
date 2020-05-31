@@ -1,23 +1,23 @@
-const arr = ["AAA", "BBBBBB", "ABABABAB", "BABABA", "AAAABBBB"];
+const testArray = ["AAA", "BBBBBB", "ABABABAB", "BABABA", "AAAABBBB"];
 
-for (let i = 0; i < arr.length; i++) {
-  alternatingCharacters(arr[i]);
+for (let i = 0; i < testArray.length; i++) {
+  main(testArray[i].length, testArray[i]);
 }
 
-function alternatingCharacters(s) {
+function main(length, arg) {
   let result = 0;
 
-  if (s.length >= 1 && s.length <= 100000) {
-    let arr = s.split('');
+  if (length >= 1 && length <= 100000) {
+    let arr = arg.split('');
     let past = arr[0];
 
-    arr = arr.filter((item, key) => {
-      if (item !== past && key !== 0) {
-        past = item;
-        return item;
+    arr = arr.filter((value, inx) => {
+      if (value !== past && inx !== 0) {
+        past = value;
+        return value;
       }
     });
-    result = s.length - [s.charAt(0), ...arr].length;
+    result = length - [arg.charAt(0), ...arr].length;
   }
   console.log(result)
   return result;
